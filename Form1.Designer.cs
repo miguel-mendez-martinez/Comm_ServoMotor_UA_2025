@@ -32,22 +32,68 @@
             this.ConnectButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.labelConectado = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxVelocidad = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.labelConectado = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button13 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.PowerLabel = new System.Windows.Forms.Label();
+            this.labelError = new System.Windows.Forms.Label();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.labelPosicion = new System.Windows.Forms.Label();
+            this.VelMovVEL = new System.Windows.Forms.NumericUpDown();
+            this.VelMovABS = new System.Windows.Forms.NumericUpDown();
+            this.PosMovABS = new System.Windows.Forms.NumericUpDown();
+            this.VelMovREL = new System.Windows.Forms.NumericUpDown();
+            this.PosMovREL = new System.Windows.Forms.NumericUpDown();
+            this.VelMovJOG = new System.Windows.Forms.NumericUpDown();
+            this.PosMovJOG = new System.Windows.Forms.NumericUpDown();
+            this.VelMovHOME = new System.Windows.Forms.NumericUpDown();
+            this.ModeMovHOME = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VelMovVEL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VelMovABS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PosMovABS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VelMovREL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PosMovREL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VelMovJOG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PosMovJOG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VelMovHOME)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ModeMovHOME)).BeginInit();
             this.SuspendLayout();
             // 
             // ConnectButton
@@ -82,121 +128,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Conexión";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(47, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(134, 20);
-            this.textBox1.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Dirección IP";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Location = new System.Drawing.Point(450, 72);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(316, 83);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Potencia";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(184, 27);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(105, 40);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "RESET";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(40, 27);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(118, 40);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "ON";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Location = new System.Drawing.Point(812, 72);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(187, 83);
-            this.groupBox3.TabIndex = 5;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Error";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(301, 32);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 31);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Desconectarse";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.button6);
-            this.groupBox4.Controls.Add(this.button5);
-            this.groupBox4.Controls.Add(this.label2);
-            this.groupBox4.Controls.Add(this.textBoxVelocidad);
-            this.groupBox4.Location = new System.Drawing.Point(700, 180);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(239, 179);
-            this.groupBox4.TabIndex = 5;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Velocidad";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Velocidad";
-            // 
-            // textBoxVelocidad
-            // 
-            this.textBoxVelocidad.Location = new System.Drawing.Point(15, 53);
-            this.textBoxVelocidad.Name = "textBoxVelocidad";
-            this.textBoxVelocidad.Size = new System.Drawing.Size(134, 20);
-            this.textBoxVelocidad.TabIndex = 5;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(21, 107);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(78, 31);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "RUN";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(125, 107);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(96, 31);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "STOP";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
             // labelConectado
             // 
             this.labelConectado.AutoSize = true;
@@ -208,11 +139,470 @@
             this.labelConectado.Text = "CONECTADO!!";
             this.labelConectado.Visible = false;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(301, 32);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(96, 31);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Desconectarse";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(50, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Dirección IP";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(47, 38);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(134, 20);
+            this.textBox1.TabIndex = 2;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.PowerLabel);
+            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.Location = new System.Drawing.Point(450, 72);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(316, 83);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Potencia";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(106, 30);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(97, 35);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "RESET";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(19, 30);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(81, 35);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "ON";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.labelError);
+            this.groupBox3.Location = new System.Drawing.Point(812, 72);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(187, 83);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Error";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.VelMovVEL);
+            this.groupBox4.Controls.Add(this.button6);
+            this.groupBox4.Controls.Add(this.button5);
+            this.groupBox4.Controls.Add(this.label2);
+            this.groupBox4.Location = new System.Drawing.Point(718, 345);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(239, 141);
+            this.groupBox4.TabIndex = 5;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Velocidad";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(128, 91);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(96, 31);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "STOP";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(15, 91);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(78, 31);
+            this.button5.TabIndex = 5;
+            this.button5.Text = "RUN";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(18, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Velocidad (mm)";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.PosMovABS);
+            this.groupBox5.Controls.Add(this.VelMovABS);
+            this.groupBox5.Controls.Add(this.label4);
+            this.groupBox5.Controls.Add(this.button1);
+            this.groupBox5.Controls.Add(this.button7);
+            this.groupBox5.Controls.Add(this.label3);
+            this.groupBox5.Location = new System.Drawing.Point(50, 173);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(239, 141);
+            this.groupBox5.TabIndex = 7;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Movimiento Absoluto";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(21, 91);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Posicion";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(146, 97);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(78, 31);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "STOP";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(146, 47);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(78, 31);
+            this.button7.TabIndex = 5;
+            this.button7.Text = "RUN";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(18, 36);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Velocidad";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.PosMovREL);
+            this.groupBox6.Controls.Add(this.VelMovREL);
+            this.groupBox6.Controls.Add(this.label5);
+            this.groupBox6.Controls.Add(this.button8);
+            this.groupBox6.Controls.Add(this.button9);
+            this.groupBox6.Controls.Add(this.label6);
+            this.groupBox6.Location = new System.Drawing.Point(50, 345);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(239, 141);
+            this.groupBox6.TabIndex = 9;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Movimiento Relativo";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(21, 91);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Posicion";
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(146, 97);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(78, 31);
+            this.button8.TabIndex = 5;
+            this.button8.Text = "STOP";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(146, 47);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(78, 31);
+            this.button9.TabIndex = 5;
+            this.button9.Text = "RUN";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(18, 36);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(54, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Velocidad";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.PosMovJOG);
+            this.groupBox7.Controls.Add(this.VelMovJOG);
+            this.groupBox7.Controls.Add(this.label7);
+            this.groupBox7.Controls.Add(this.button10);
+            this.groupBox7.Controls.Add(this.button11);
+            this.groupBox7.Controls.Add(this.label8);
+            this.groupBox7.Location = new System.Drawing.Point(381, 173);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(239, 141);
+            this.groupBox7.TabIndex = 10;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Movimiento Jog";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(21, 91);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 13);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Posicion";
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(146, 97);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(78, 31);
+            this.button10.TabIndex = 5;
+            this.button10.Text = "STOP";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(146, 47);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(78, 31);
+            this.button11.TabIndex = 5;
+            this.button11.Text = "RUN";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(18, 36);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 13);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Velocidad";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.ModeMovHOME);
+            this.groupBox8.Controls.Add(this.VelMovHOME);
+            this.groupBox8.Controls.Add(this.label9);
+            this.groupBox8.Controls.Add(this.button13);
+            this.groupBox8.Controls.Add(this.label10);
+            this.groupBox8.Location = new System.Drawing.Point(381, 345);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(239, 141);
+            this.groupBox8.TabIndex = 11;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Home";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(21, 91);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(34, 13);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Modo";
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(146, 73);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(78, 31);
+            this.button13.TabIndex = 5;
+            this.button13.Text = "HOME";
+            this.button13.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(18, 36);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(54, 13);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "Velocidad";
+            // 
+            // PowerLabel
+            // 
+            this.PowerLabel.AutoSize = true;
+            this.PowerLabel.BackColor = System.Drawing.Color.Red;
+            this.PowerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.PowerLabel.Location = new System.Drawing.Point(239, 33);
+            this.PowerLabel.Name = "PowerLabel";
+            this.PowerLabel.Size = new System.Drawing.Size(52, 25);
+            this.PowerLabel.TabIndex = 3;
+            this.PowerLabel.Text = "OFF";
+            // 
+            // labelError
+            // 
+            this.labelError.AutoSize = true;
+            this.labelError.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.labelError.Location = new System.Drawing.Point(25, 25);
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(128, 39);
+            this.labelError.TabIndex = 0;
+            this.labelError.Text = "label11";
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.labelPosicion);
+            this.groupBox9.Location = new System.Drawing.Point(718, 173);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(187, 83);
+            this.groupBox9.TabIndex = 6;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Posicion Actual";
+            // 
+            // labelPosicion
+            // 
+            this.labelPosicion.AutoSize = true;
+            this.labelPosicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.labelPosicion.Location = new System.Drawing.Point(25, 25);
+            this.labelPosicion.Name = "labelPosicion";
+            this.labelPosicion.Size = new System.Drawing.Size(128, 39);
+            this.labelPosicion.TabIndex = 0;
+            this.labelPosicion.Text = "label11";
+            // 
+            // VelMovVEL
+            // 
+            this.VelMovVEL.Location = new System.Drawing.Point(21, 58);
+            this.VelMovVEL.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.VelMovVEL.Name = "VelMovVEL";
+            this.VelMovVEL.Size = new System.Drawing.Size(149, 20);
+            this.VelMovVEL.TabIndex = 7;
+            this.VelMovVEL.ValueChanged += new System.EventHandler(this.textBoxVelocidad_Leave);
+            // 
+            // VelMovABS
+            // 
+            this.VelMovABS.Location = new System.Drawing.Point(21, 54);
+            this.VelMovABS.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.VelMovABS.Name = "VelMovABS";
+            this.VelMovABS.Size = new System.Drawing.Size(95, 20);
+            this.VelMovABS.TabIndex = 9;
+            // 
+            // PosMovABS
+            // 
+            this.PosMovABS.Location = new System.Drawing.Point(24, 104);
+            this.PosMovABS.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.PosMovABS.Name = "PosMovABS";
+            this.PosMovABS.Size = new System.Drawing.Size(95, 20);
+            this.PosMovABS.TabIndex = 10;
+            // 
+            // VelMovREL
+            // 
+            this.VelMovREL.Location = new System.Drawing.Point(21, 54);
+            this.VelMovREL.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.VelMovREL.Name = "VelMovREL";
+            this.VelMovREL.Size = new System.Drawing.Size(95, 20);
+            this.VelMovREL.TabIndex = 11;
+            // 
+            // PosMovREL
+            // 
+            this.PosMovREL.Location = new System.Drawing.Point(21, 104);
+            this.PosMovREL.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.PosMovREL.Name = "PosMovREL";
+            this.PosMovREL.Size = new System.Drawing.Size(95, 20);
+            this.PosMovREL.TabIndex = 12;
+            // 
+            // VelMovJOG
+            // 
+            this.VelMovJOG.Location = new System.Drawing.Point(21, 54);
+            this.VelMovJOG.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.VelMovJOG.Name = "VelMovJOG";
+            this.VelMovJOG.Size = new System.Drawing.Size(95, 20);
+            this.VelMovJOG.TabIndex = 13;
+            // 
+            // PosMovJOG
+            // 
+            this.PosMovJOG.Location = new System.Drawing.Point(21, 104);
+            this.PosMovJOG.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.PosMovJOG.Name = "PosMovJOG";
+            this.PosMovJOG.Size = new System.Drawing.Size(95, 20);
+            this.PosMovJOG.TabIndex = 14;
+            // 
+            // VelMovHOME
+            // 
+            this.VelMovHOME.Location = new System.Drawing.Point(21, 54);
+            this.VelMovHOME.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.VelMovHOME.Name = "VelMovHOME";
+            this.VelMovHOME.Size = new System.Drawing.Size(95, 20);
+            this.VelMovHOME.TabIndex = 15;
+            // 
+            // ModeMovHOME
+            // 
+            this.ModeMovHOME.Location = new System.Drawing.Point(21, 107);
+            this.ModeMovHOME.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.ModeMovHOME.Name = "ModeMovHOME";
+            this.ModeMovHOME.Size = new System.Drawing.Size(95, 20);
+            this.ModeMovHOME.TabIndex = 16;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1033, 547);
+            this.Controls.Add(this.groupBox9);
+            this.Controls.Add(this.groupBox8);
+            this.Controls.Add(this.groupBox7);
+            this.Controls.Add(this.groupBox6);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -224,8 +614,30 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VelMovVEL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VelMovABS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PosMovABS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VelMovREL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PosMovREL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VelMovJOG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PosMovJOG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VelMovHOME)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ModeMovHOME)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -245,10 +657,41 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxVelocidad;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label labelConectado;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label PowerLabel;
+        private System.Windows.Forms.Label labelError;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.Label labelPosicion;
+        private System.Windows.Forms.NumericUpDown VelMovVEL;
+        private System.Windows.Forms.NumericUpDown PosMovABS;
+        private System.Windows.Forms.NumericUpDown VelMovABS;
+        private System.Windows.Forms.NumericUpDown PosMovREL;
+        private System.Windows.Forms.NumericUpDown VelMovREL;
+        private System.Windows.Forms.NumericUpDown PosMovJOG;
+        private System.Windows.Forms.NumericUpDown VelMovJOG;
+        private System.Windows.Forms.NumericUpDown ModeMovHOME;
+        private System.Windows.Forms.NumericUpDown VelMovHOME;
     }
 }
 

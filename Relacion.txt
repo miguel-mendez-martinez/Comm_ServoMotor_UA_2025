@@ -1,0 +1,1 @@
+mm := TO_DINT(TO_REAL(PUU) / TO_REAL((resolution_encoder * 12 )/(22 * 10)));

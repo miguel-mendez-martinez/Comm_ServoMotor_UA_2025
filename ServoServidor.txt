@@ -1,0 +1,75 @@
+{attribute 'qualified_only'}
+VAR_GLOBAL
+	xMcbRdy			:BOOL; // Indicates the state of Motor Circuit Breaker. Mapped to the physical input where the accordingly auxiliary contact of the MCB is connected
+	xHomeDone		:BOOL := FALSE;
+	xPowerState		AT %MX120.0 :BOOL; // Indicates the power stage is enabled
+	wErrID			:WORD;
+	ActualPos		AT %MD150:DINT;
+	MaxPos			:INT := 3200; //mm
+	
+	xCmdEnPwr		AT %MX54.0 :BOOL; // Command to enable the power stage of the LXM28
+	xCmdRst			AT %MX82.0:BOOL; // Command to acknowledge an error on the LXM28
+	xCmdStop		AT %MX58.0 :BOOL; // Command to stop the LXM28
+	xCmdJogFwd		AT %MX62.0 :BOOL; // Command to start the drive in jog mode with positive direction
+	xCmdJogRev		AT %MX66.0 :BOOL; // Command to start the drive in jog mode with negative direction
+	xCmdJogFast		:BOOL := FALSE; // Defines the used velocity setpoint for jog operation
+	diSetJogDist	:DINT := 0; // Defines the distance to move for one tip on jog operation. If value = 0 the continuous motion will be performed
+	iWaitTimeJog	:INT  := 0; // Define time delay in ms for change to coninous motion after jog via distance
+	xCmdMovVelo		AT %MX70.0 :BOOL; // Command to start the drive with continuous velocity
+	xCmdMovRel		AT %MX74.0 :BOOL; // Command to start the drive for relative positioning
+	xCmdMovAbs		AT %MX78.0 :BOOL; // Command to start the drive for absolute positioning
+	
+	xCmdHoming		:BOOL; // Command to start homing operation	
+	xHomeAborted	: BOOL;
+	
+	xJogActv		:BOOL; // Indicates a jog operation is active
+	xVeloActv		:BOOL; // Indicates the MC_MoveVelocity is active
+	xRelActv		:BOOL; // Indicates the MC_MoveRelative is active
+	xAbsActv		:BOOL; // Indicates the MC_MoveAbsolute is active
+	dwErrID			:DWORD; // Contains the error ID of the LXM28
+	xErr			AT %MX104.0 :BOOL; // Indicates an error is detected (dwErrID <> 0)
+	xHomeActv		:BOOL; // Indicates the MC_Home is active
+	
+	xComOk			:BOOL; // Indicates the CANopen node is in state "Operational"
+	eComStat		:CIA405.DEVICE_STATE; // Node state provided by the FB Get_State
+	xAbsMoveDone	:BOOL;
+	xRelMoveDone	:BOOL;
+	
+	diSetPos :DINT;
+	diSetVelo :INT;
+	
+	//MODBUS SIGNALS
+	//xCmdEnPwr_Modbus :BOOL;
+	//xCmdRst_Modbus	:BOOL;
+	//xCmdStop_Modbus :BOOL;
+	//xCmdJogFwd_Modbus :BOOL;
+	//xCmdJogRev_Modbus :BOOL;
+	//xCmdMovAbs_Modbus: BOOL;
+	//xCmdMovRel_Modbus: BOOL;
+	//xCmdMovVelo_Modbus: BOOL;
+	//xCmdHoming_Modbus: BOOL;
+	//diSetPos_Modbus :DINT;
+	//diSetVelo_Modbus :INT;	
+	
+	wState : WORD;
+	
+	AbsMoveLimit : INT := 3000;
+	
+	//Free ModBus Registers
+	//Read
+	wFreeReadRegister : ARRAY[4..9] OF WORD;
+	
+	//Read&Write
+	//wFreeWriteRegister : ARRAY[12..19] OF WORD;
+		
+	uiSetHomeMod	AT %MW400:UINT := 21; // Defines the mthod for homing operation. 33 = REF+ with index pulse, not inv., inside
+	diSetVeloHome	AT %MW410:INT := 80; // Velocity setpoint for search of the reference switch
+	diSetVeloJogFast AT %MW420:INT := 50; // Velocity setpoint for jog operation with fast speed 	
+	diSetVeloMovVelo AT %MW430:INT := 250; // Velocity setpoint for velocity mode in rpm.
+	diSetVeloMovRel	AT %MW440:INT := 100; // Velocity setpoint for relative positioning in usr/s2
+	diSetVeloMovAbs	AT %MW450:INT := 200; // Velocity setpoint for absolute positioning in usr/s2
+	diSetDistMovRel	AT %MW460:INT := 120; // Distance setpoint for relative positioning in usr
+	diSetPosMovAbs	AT %MW470:INT := 150; // Target position for absoute positioning in usr
+	
+	var1 AT %MX50.0 :BOOL := FALSE;
+END_VAR
