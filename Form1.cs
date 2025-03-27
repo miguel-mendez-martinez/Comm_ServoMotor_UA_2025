@@ -29,10 +29,16 @@ namespace Comm_ServoMotor_2_UA_2025
         {
             ModbusClient = new ModbusClient();
 
-            ModbusClient.IPAddress = "192.168.1.50";
+            this.IPtextbox.Invoke(new Action(() => this.IPtextbox.Text = "192.168.1.50"));
+
+            this.initialiceModbus();
+
+        }
+
+        private void initialiceModbus()
+        {
+            ModbusClient.IPAddress = this.IPtextbox.Text;
             ModbusClient.Port = 502;
-
-
         }
 
         private void ConnectButton_Click(object sender, EventArgs e)
@@ -55,28 +61,6 @@ namespace Comm_ServoMotor_2_UA_2025
             Thread reader_thread = new Thread(new ThreadStart(ReadRegisters));
             reader_thread.Start();
 
-            // si el servo da error, tenemos que pulsar reset
-
-            /*int[] error;
-            error = ModbusClient.ReadHoldingRegisters(52, 1);
-
-            labelError.Text = error[0].ToString();
-
-            if (error[0] > 0) {
-                
-            }
-
-            error = ModbusClient.ReadHoldingRegisters(52, 1);
-
-            labelError.Text = error[0].ToString();
-
-
-            int[] result;
-            result = ModbusClient.ReadHoldingRegisters(28, 1);
-            textBoxVelocidad.Text = result[0].ToString();*/
-
-
-
         }
 
         private void resetDriver()
@@ -88,11 +72,26 @@ namespace Comm_ServoMotor_2_UA_2025
             ModbusClient?.WriteSingleRegister(41, 0);
         }
 
+        private void readPositions()
+        {
+            // posicion absoluta
+            int[] posAbs;
+            posAbs = this.ModbusClient.ReadHoldingRegisters(470, 1);
+
+            this.PosMovABS.Invoke(new Action(() => this.PosMovABS.Value = (int)posAbs[0]));
+
+            // posicion relativa
+            int[] posRel;
+            posRel = this.ModbusClient.ReadHoldingRegisters(460, 1);
+
+            this.PosMovREL.Invoke(new Action(() => this.PosMovREL.Value = (int)posRel[0]));
+        }
+
         private void readVelocities()
         {
             // velocidad de vuelta a HOME
             int[] veloHome;
-            veloHome = this.ModbusClient.ReadHoldingRegisters(400, 1);
+            veloHome = this.ModbusClient.ReadHoldingRegisters(410, 1);
 
             this.VelMovHOME.Invoke(new Action(() => this.VelMovHOME.Value = (int)veloHome[0]));
 
@@ -131,9 +130,10 @@ namespace Comm_ServoMotor_2_UA_2025
                 // ejecutamos un read de las distintas variables imporatntes 
 
                 int[] error;
-                error = this.ModbusClient.ReadHoldingRegisters(52, 1);
+                error = this.ModbusClient.ReadHoldingRegisters(1200, 2);
+                int errorValue = ((ushort)error[1] << 16) | ((ushort)error[0]);
 
-                this.labelError.Invoke(new Action(() => this.labelError.Text = error[0].ToString()));
+                this.labelError.Invoke(new Action(() => this.labelError.Text = errorValue.ToString()));
 
                 int[] powerEnabled;
                 powerEnabled = this.ModbusClient.ReadHoldingRegisters(60, 1);
@@ -161,6 +161,14 @@ namespace Comm_ServoMotor_2_UA_2025
 
                 this.readVelocities();
 
+                this.readPositions();
+
+                //leemos el modo
+                int[] modeHome;
+                modeHome = this.ModbusClient.ReadHoldingRegisters(400, 1);
+
+                this.ModeMovHOME.Invoke(new Action(() => this.ModeMovHOME.Value = (int)modeHome[0]));
+
                 Thread.Sleep(3000);
             }
         }
@@ -180,11 +188,7 @@ namespace Comm_ServoMotor_2_UA_2025
 
         private void button4_Click(object sender, EventArgs e)
         {
-            ModbusClient?.WriteSingleRegister(28, 1);
-            Thread.Sleep(200);
-
-            ModbusClient?.WriteSingleRegister(28, 0);
-
+            this.ModbusClient?.WriteSingleRegister(27, 1);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -243,6 +247,102 @@ namespace Comm_ServoMotor_2_UA_2025
 
             //this.escribeDosRegistros(this.inputVelocidad.Value, 660);
 
+        }
+
+        private void PosMovABS_ValueChanged(object sender, EventArgs e)
+        {
+            this.escribeUnRegistro(this.PosMovABS.Value, 470);
+        }
+
+        private void VelMovREL_ValueChanged(object sender, EventArgs e)
+        {
+            this.escribeUnRegistro(this.VelMovREL.Value, 440);
+        }
+
+        private void PosMovREL_ValueChanged(object sender, EventArgs e)
+        {
+            this.escribeUnRegistro(this.PosMovREL.Value, 460);
+        }
+
+        private void VelMovJOG_ValueChanged(object sender, EventArgs e)
+        {
+            this.escribeUnRegistro(this.VelMovJOG.Value, 420);
+        }
+
+        private void VelMovHOME_ValueChanged(object sender, EventArgs e)
+        {
+            this.escribeUnRegistro(this.VelMovHOME.Value, 410);
+        }
+
+        private void ModeMovHOME_ValueChanged(object sender, EventArgs e)
+        {
+            this.escribeUnRegistro(this.ModeMovHOME.Value, 400);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            // mandamos un pulso a la variable velocidad 
+            ModbusClient?.WriteSingleRegister(39, 1);
+            Thread.Sleep(300);
+
+            ModbusClient?.WriteSingleRegister(39, 0);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.stopServo();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            ModbusClient?.WriteSingleRegister(37, 1);
+            Thread.Sleep(300);
+
+            ModbusClient?.WriteSingleRegister(37, 0);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.stopServo();
+        }
+
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            ModbusClient?.WriteSingleRegister(40, 1);
+            Thread.Sleep(300);
+
+            ModbusClient?.WriteSingleRegister(40, 0);
+        }
+
+        private void VelMovABS_ValueChanged(object sender, EventArgs e)
+        {
+            this.escribeUnRegistro(this.VelMovABS.Value, 450);
+        }
+
+        private void button11_MouseUp(object sender, MouseEventArgs e)
+        {
+            ModbusClient?.WriteSingleRegister(31, 0);
+        }
+
+        private void button11_MouseDown(object sender, MouseEventArgs e)
+        {
+            ModbusClient?.WriteSingleRegister(31, 1);
+        }
+
+        private void button10_MouseDown(object sender, MouseEventArgs e)
+        {
+            ModbusClient?.WriteSingleRegister(33, 1);
+        }
+
+        private void button10_MouseUp(object sender, MouseEventArgs e)
+        {
+            ModbusClient?.WriteSingleRegister(33, 0);
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            this.ModbusClient?.WriteSingleRegister(27, 0);
         }
     }
 }
